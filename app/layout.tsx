@@ -10,6 +10,8 @@ import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/Navbar";
 
+import { ClerkProvider } from "@clerk/nextjs";
+
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 const ibmPlexSerif = IBM_Plex_Serif({
@@ -37,27 +39,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={cn(
-        "font-sans",
-        inter.variable,
-        monaSans.variable,
-        ibmPlexSerif.variable,
-      )}
-    >
-      <body className="antialiased">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem={false}
-          disableTransitionOnChange
-        >
-          <Navbar />
-          {children}
-        </ThemeProvider>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html
+        lang="en"
+        suppressHydrationWarning
+        className={cn(
+          "font-sans",
+          inter.variable,
+          monaSans.variable,
+          ibmPlexSerif.variable
+        )}
+      >
+        <body className="antialiased">
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem={false}
+            disableTransitionOnChange
+          >
+            <Navbar />
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
