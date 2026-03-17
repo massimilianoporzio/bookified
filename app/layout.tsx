@@ -4,6 +4,7 @@
  */
 import type { Metadata } from "next";
 import { IBM_Plex_Serif, Inter, Mona_Sans } from "next/font/google";
+import { ui } from '@clerk/ui'
 
 import "./globals.css";
 import { cn } from "@/lib/utils";
@@ -39,7 +40,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+     ui={ui}
+    >
       <html
         lang="en"
         suppressHydrationWarning
