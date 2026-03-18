@@ -22,7 +22,7 @@ const steps = [
 
 const HeroSection = () => {
   return (
-    <section className="flex justify-center items-center min-h-[60vh] w-full bg-(--bg-primary) py-6 px-2 mt-10 md:mt-0">
+    <section className="wrapper pt-28 mb-10 md:mb-16 lg:mb-24">
       <div className="library-hero-card w-full max-w-6xl">
         <div className="library-hero-content">
           {/* Testo e CTA */}

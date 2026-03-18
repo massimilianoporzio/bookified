@@ -3,22 +3,23 @@
  *   All rights reserved.
  */
 
+import BookCard from "@/components/BookCard";
 import HeroSection from "@/components/HeroSection";
 import { sampleBooks } from "@/lib/constants";
 
 const Page = () => {
   return (
-    <main>
+    <main className="wrapper container">
       <HeroSection />
-      <div className="library-hero-grid">
+      <div className="library-books-grid">
         {sampleBooks.map((book) => (
-          <div
+          <BookCard
             key={book._id}
-            className="library-hero-grid-item"
-            style={{ backgroundColor: book.coverColor }}
-          >
-            <img src={book.coverURL} alt={book.title} />
-          </div>
+            title={book.title}
+            author={book.author}
+            coverURL={book.coverURL}
+            slug={book.slug}
+          />
         ))}
       </div>
     </main>

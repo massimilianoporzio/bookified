@@ -77,7 +77,7 @@ export const sampleBooks = [
     title: "The Courage to Be Disliked",
     author: "Fumitake Koga & Ichiro Kishimi",
     slug: "the-courage-to-be-disliked",
-    coverURL: "https://covers.openlibrary.org/b/isbn/9781501197274-L.jpg",
+    coverURL: "https://covers.openlibrary.org/b/id/15179268-L.jpg",
     coverColor: "#f8f4e9",
   },
   {
